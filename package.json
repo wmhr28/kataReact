@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "start": "./node_modules/.bin/babel-node ./app.js --watch ./app",
-    "test": "grunt"
+    "test": "grunt",
+    "karma": "karma start"
   },
   "dependencies": {
     "body-parser": "^1.17.0",
