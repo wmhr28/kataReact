@@ -10,8 +10,7 @@ export class Alphabet extends Component {
   generateAlphArray(start, end) {
     let resp = [];
     for (let i = start; i <= end; i++) {
-      resp.push(String.fromCharCode(i))
-
+      resp.push(String.fromCharCode(i));
     }
     return resp;
   }
@@ -21,16 +20,15 @@ export class Alphabet extends Component {
     return p2.concat(p1);
   }
   generarPared() {
-
     let resp = [];
     let testAlph = this.generateAlphArray(65, 90);
-
     for (let i = 1; i <= 25; i++) {
       resp.push(this.moverParteInicioAFin(testAlph, i));
     }
-
     return resp;
   }
+
+  /*Start @Deprecated*/
   getPositionAlph14(element) {
     let alph = this.generateAlphArray(65, 90);
     let alph14 = this.moverParteInicioAFin(alph, 14);
@@ -42,6 +40,8 @@ export class Alphabet extends Component {
     });
     return id;
   }
+  /*End @Deprecated*/
+
   getPositionAlph(element, indexLine) {
     let alphComp = this.generateAlphArray(65, 90);
     let alph = this.moverParteInicioAFin(alphComp, indexLine);
@@ -53,7 +53,7 @@ export class Alphabet extends Component {
     });
     return id;
   }
-  getLetraAlph(posicion) {
+  getLetraAlphCorrecto(posicion) {
     let alph = this.generateAlphArray(65, 90);
     let letra = '';
     alph.map((item, index) => {
@@ -67,13 +67,11 @@ export class Alphabet extends Component {
   render() {
     return (
       <span className="container">
-
         {
           this.state.pared.map((linea, index) => {
-            return <div key={index} className="linea"><span key={'num' + index}>{index + 1}</span> : <span key={'text' + index}>{linea}</span></div>
+            return <div key={index} className="linea"><span>{index + 1}</span> : <span>{linea}</span></div>
           })
         }
-
       </span>
     );
   }

@@ -70,13 +70,13 @@ describe('Alphabet', () => {
     });
   });
 
-  describe('getLetraAlph', () => {
+  describe('getLetraAlphCorrecto', () => {
     it('obtener la letra de la posicion 0', () => {
-      let element = instance.getLetraAlph(0);
+      let element = instance.getLetraAlphCorrecto(0);
       expect(element).toEqual('A');
     }); 
     it('obtener la letra de la posicion2', () => {
-      let element = instance.getLetraAlph(2);
+      let element = instance.getLetraAlphCorrecto(2);
       expect(element).toEqual('C');
     }); 
     
