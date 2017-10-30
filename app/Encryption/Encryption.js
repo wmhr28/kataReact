@@ -7,15 +7,12 @@ class Encryption extends Component {
     this.state = { resp: '' };
     this.handler = this.handler.bind(this);
   }
-  decrypt(indexLine, text) {
-    let resp = '';
+  decrypt(indexLine, text) { 
     let objAlph = new Alphabet();
-    [].map.call(text, (char) => {
+    return [].map.call(text, (char) => {
       let position = objAlph.getPositionAlph(char, indexLine);
-      resp += objAlph.getLetraAlphCorrecto(position);
-    });
-
-    return resp;
+      return objAlph.getLetraAlphCorrecto(position);
+    }).join(''); 
   }
   handler(e) {
     let val = e.target.value.toUpperCase();

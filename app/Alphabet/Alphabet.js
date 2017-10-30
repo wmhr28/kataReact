@@ -31,37 +31,19 @@ export class Alphabet extends Component {
   /*Start @Deprecated*/
   getPositionAlph14(element) {
     let alph = this.generateAlphArray(65, 90);
-    let alph14 = this.moverParteInicioAFin(alph, 14);
-    let id = 0;
-    alph14.map((item, index) => {
-      if (item == element) {
-        id = index;
-      }
-    });
-    return id;
+    let alph14 = this.moverParteInicioAFin(alph, 14); 
+    return alph14.indexOf(element);
   }
   /*End @Deprecated*/
 
   getPositionAlph(element, indexLine) {
     let alphComp = this.generateAlphArray(65, 90);
     let alph = this.moverParteInicioAFin(alphComp, indexLine);
-    let id = 0;
-    alph.map((item, index) => {
-      if (item == element) {
-        id = index;
-      }
-    });
-    return id;
+    return alph.indexOf(element); 
   }
   getLetraAlphCorrecto(posicion) {
     let alph = this.generateAlphArray(65, 90);
-    let letra = '';
-    alph.map((item, index) => {
-      if (posicion == index) {
-        letra = item;
-      }
-    });
-    return letra;
+    return alph[posicion]; 
   }
 
   render() {
