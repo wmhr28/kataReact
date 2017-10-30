@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export class Alphabet extends Component {
   constructor(props) {
     super(props);
@@ -7,33 +8,33 @@ export class Alphabet extends Component {
   }
 
   generateAlphArray(start, end) {
-    var resp = [];
-    for (var i = start; i <= end; i++) {
+    let resp = [];
+    for (let i = start; i <= end; i++) {
       resp.push(String.fromCharCode(i))
 
     }
     return resp;
   }
   moverParteInicioAFin(_array, index) {
-    var p1 = _array.slice(0, index);
-    var p2 = _array.slice(index);
+    let p1 = _array.slice(0, index);
+    let p2 = _array.slice(index);
     return p2.concat(p1);
   }
   generarPared() {
 
-    var resp = [];
-    var testAlph = this.generateAlphArray(65, 90);
+    let resp = [];
+    let testAlph = this.generateAlphArray(65, 90);
 
-    for (var i = 1; i <= 25; i++) {
+    for (let i = 1; i <= 25; i++) {
       resp.push(this.moverParteInicioAFin(testAlph, i));
     }
 
     return resp;
   }
   getPositionAlph14(element) {
-    var alph = this.generateAlphArray(65, 90);
-    var alph14 = this.moverParteInicioAFin(alph, 14);
-    var id = 0;
+    let alph = this.generateAlphArray(65, 90);
+    let alph14 = this.moverParteInicioAFin(alph, 14);
+    let id = 0;
     alph14.map((item, index) => {
       if (item == element) {
         id = index;
@@ -42,8 +43,8 @@ export class Alphabet extends Component {
     return id;
   }
   getLetraAlph(posicion) {
-    var alph = this.generateAlphArray(65, 90); 
-    var letra = '';
+    let alph = this.generateAlphArray(65, 90);
+    let letra = '';
     alph.map((item, index) => {
       if (posicion == index) {
         letra = item;
@@ -51,14 +52,14 @@ export class Alphabet extends Component {
     });
     return letra;
   }
-  
+
   render() {
     return (
-      <span className="">
+      <span className="container">
 
         {
           this.state.pared.map((linea, index) => {
-            return <div class="linea"><span>{index + 1}</span> : <span>{linea}</span></div>
+            return <div key={index} className="linea"><span key={'num' + index}>{index + 1}</span> : <span key={'text' + index}>{linea}</span></div>
           })
         }
 

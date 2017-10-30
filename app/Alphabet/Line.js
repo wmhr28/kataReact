@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class Alphabet extends Component {
+export class Line extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,4 +13,4 @@ export class Alphabet extends Component {
   }
 }
 
-export default Alphabet;
+export default Line;

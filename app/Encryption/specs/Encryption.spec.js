@@ -14,15 +14,15 @@ describe('Encryption', () => {
   });
   describe('decrypt', () => {
     it('entrada POHAOB devuelve BATMAN', () => {
-      var resp = instance.decrypt('POHAOB');
+      let resp = instance.decrypt('POHAOB');
       expect(resp).toEqual('BATMAN');
     });
     it('entrada VCZO devuelve HOLA', () => {
-      var resp = instance.decrypt('VCZO');
+      let resp = instance.decrypt('VCZO');
       expect(resp).toEqual('HOLA');
     });
     it('entrada PCAPO devuelve HOLA', () => {
-      var resp = instance.decrypt('PCAPO');
+      let resp = instance.decrypt('PCAPO');
       expect(resp).toEqual('BOMBA');
     });
   });

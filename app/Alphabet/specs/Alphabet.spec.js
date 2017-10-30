@@ -25,25 +25,25 @@ describe('Alphabet', () => {
       expect(instance.generateAlphArray(65, 90).length).toEqual(26);
     });
     it('comprobar todo el alfabeto', () => {
-      var alphString = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z';
-      var resp = alphString.split(',');
+      let alphString = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z';
+      let resp = alphString.split(',');
       expect(instance.generateAlphArray(65, 90)).toEqual(resp);
     });
   });
 
   describe('moverParteInicioAFin', () => {
     it('generamos [A,B,C,D], y como parametro 1 debe devolver [B,C,D,A]', () => {
-      var testAlph = instance.generateAlphArray(65, 68);
+      let testAlph = instance.generateAlphArray(65, 68);
       expect(testAlph).toEqual(['A', 'B', 'C', 'D']);
       expect(instance.moverParteInicioAFin(testAlph, 1)).toEqual(['B', 'C', 'D', 'A']);
     });
     it('generamos [A,B,C,D,...,Z], y como parametro 1 debe devolver [B,C,D,...,Z,A]', () => {
-      var testAlph = instance.generateAlphArray(65, 90);
-      var resp = instance.moverParteInicioAFin(testAlph, 1);
+      let testAlph = instance.generateAlphArray(65, 90);
+      let resp = instance.moverParteInicioAFin(testAlph, 1);
 
-      var lastElement = resp[resp.length - 1];
-      var penultimoElemento = resp[resp.length - 2];
-      var firstElement = resp[0];
+      let lastElement = resp[resp.length - 1];
+      let penultimoElemento = resp[resp.length - 2];
+      let firstElement = resp[0];
 
       expect(lastElement).toEqual('A');
       expect(penultimoElemento).toEqual('Z');
@@ -53,7 +53,7 @@ describe('Alphabet', () => {
 
   describe('generarPared', () => {
     it('debe tener 25 objetos con lineas de abecedario', () => {
-      var pared = instance.generarPared();
+      let pared = instance.generarPared();
       expect(pared.length).toEqual(25);
     });
   });
@@ -61,22 +61,22 @@ describe('Alphabet', () => {
 
   describe('getPositionAlph14', () => {
     it('obtener la posicion de O', () => {
-      var element = instance.getPositionAlph14('O');
+      let element = instance.getPositionAlph14('O');
       expect(element).toEqual(0);
     });
     it('obtener la posicion de Q', () => {
-      var element = instance.getPositionAlph14('Q');
+      let element = instance.getPositionAlph14('Q');
       expect(element).toEqual(2);
     });
   });
 
   describe('getLetraAlph', () => {
     it('obtener la letra de la posicion 0', () => {
-      var element = instance.getLetraAlph(0);
+      let element = instance.getLetraAlph(0);
       expect(element).toEqual('A');
     }); 
     it('obtener la letra de la posicion2', () => {
-      var element = instance.getLetraAlph(2);
+      let element = instance.getLetraAlph(2);
       expect(element).toEqual('C');
     }); 
     
