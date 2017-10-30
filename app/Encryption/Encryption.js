@@ -7,12 +7,12 @@ class Encryption extends Component {
     this.state = { resp: '' };
     this.handler = this.handler.bind(this);
   }
-  decrypt(text) {
+  decrypt(indexLine,text) {
     let resp = '';
     let objAlph = new Alphabet();
 
     [].map.call(text, (char) => {
-      let position = objAlph.getPositionAlph14(char);
+      let position = objAlph.getPositionAlph(char,indexLine);
       resp += objAlph.getLetraAlph(position);
     });
 

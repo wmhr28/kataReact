@@ -83,4 +83,16 @@ describe('Alphabet', () => {
   });
 
 
+  describe('getPositionAlph', () => {
+    it('obtener la posicion de O en linea 14 de la pared', () => {
+      let element = instance.getPositionAlph('O',14);
+      expect(element).toEqual(0);
+    });
+    it('obtener la posicion de L en linea 9 de la pared', () => {
+      let element = instance.getPositionAlph('L',9);
+      expect(element).toEqual(2);
+    });
+  });
+
+
 });

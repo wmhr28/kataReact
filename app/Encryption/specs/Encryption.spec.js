@@ -13,17 +13,23 @@ describe('Encryption', () => {
     instance = component.instance();
   });
   describe('decrypt', () => {
-    it('entrada POHAOB devuelve BATMAN', () => {
-      let resp = instance.decrypt('POHAOB');
+    fit('entrada POHAOB devuelve BATMAN', () => {
+      let resp = instance.decrypt(14,'POHAOB');
       expect(resp).toEqual('BATMAN');
     });
-    it('entrada VCZO devuelve HOLA', () => {
-      let resp = instance.decrypt('VCZO');
+    fit('entrada VCZO devuelve HOLA', () => {
+      let resp = instance.decrypt(14,'VCZO');
       expect(resp).toEqual('HOLA');
     });
-    it('entrada PCAPO devuelve HOLA', () => {
-      let resp = instance.decrypt('PCAPO');
+    fit('entrada PCAPO devuelve HOLA', () => {
+      let resp = instance.decrypt(14,'PCAPO');
       expect(resp).toEqual('BOMBA');
+    });
+    fit('entrada 1,FTUBT 9,LNALJ devuelve ESTAS CERCA', () => {
+      let resp = instance.decrypt(1,'FTUBT');
+      expect(resp).toEqual('ESTAS');
+      resp = instance.decrypt(9,'LNALJ');
+      expect(resp).toEqual('CERCA');
     });
   });
 });

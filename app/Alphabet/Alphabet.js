@@ -42,6 +42,17 @@ export class Alphabet extends Component {
     });
     return id;
   }
+  getPositionAlph(element, indexLine) {
+    let alphComp = this.generateAlphArray(65, 90);
+    let alph = this.moverParteInicioAFin(alphComp, indexLine);
+    let id = 0;
+    alph.map((item, index) => {
+      if (item == element) {
+        id = index;
+      }
+    });
+    return id;
+  }
   getLetraAlph(posicion) {
     let alph = this.generateAlphArray(65, 90);
     let letra = '';
