@@ -41,5 +41,15 @@ describe('Encryption', () => {
       resp = instance.decrypt(18,'CSLS');
       expect(resp).toEqual('KATA');
     });
+    it('entrada 20,YMNU 6,KT 25,KZ 6,HOHROUZKIG devuelve ESTA EN LA BIBLIOTECA', () => {
+      let resp = instance.decrypt(20,'YMNU');
+      expect(resp).toEqual('ESTA');
+      resp = instance.decrypt(6,'KT');
+      expect(resp).toEqual('EN');
+      resp = instance.decrypt(25,'KZ');
+      expect(resp).toEqual('LA');
+      resp = instance.decrypt(6,'HOHROUZKIG');
+      expect(resp).toEqual('BIBLIOTECA');
+    });
   });
 });
